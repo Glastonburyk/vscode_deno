@@ -257,7 +257,9 @@ export class DenoTestController implements vscode.Disposable {
       true,
     );
     coverageProfile.loadDetailedCoverage = (_run, coverage) =>
-      coverage instanceof DenoFileCoverage ? coverage.details : [];
+      Promise.resolve(
+        coverage instanceof DenoFileCoverage ? coverage.details : [],
+      );
     // TODO(@kitsonk) add debug run profile
 
     const p2c = client.protocol2CodeConverter;

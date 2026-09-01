@@ -256,7 +256,7 @@ export class DenoTestController implements vscode.Disposable {
       undefined,
       true,
     );
-    coverageProfile.loadDetailedCoverage = async (_run, coverage) =>
+    coverageProfile.loadDetailedCoverage = (_run, coverage) =>
       coverage instanceof DenoFileCoverage ? coverage.details : [];
     // TODO(@kitsonk) add debug run profile
 
